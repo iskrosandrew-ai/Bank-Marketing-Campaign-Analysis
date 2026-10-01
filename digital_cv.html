@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Andrew Iskros — Business Analyst, Technical Account Manager and Digital Marketing Specialist.">
+<title>Andrew Iskros — Digital CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#070b14; --panel:#0d1422; --panel2:#111b2d; --text:#edf4ff; --text-soft:#c9d5e8; --muted:#93a4bd;
+  --line:rgba(255,255,255,.09); --blue:#5b8cff; --cyan:#32d5ff; --green:#35d49a;
+  --shadow:0 30px 90px rgba(0,0,0,.35);
+  --grad-start:#ffffff;
+  --body-radial1:rgba(91,140,255,.18); --body-radial2:rgba(50,213,255,.12);
+  --hero-bg1:rgba(17,27,45,.96); --hero-bg2:rgba(8,14,25,.96); --hero-before:rgba(91,140,255,.28);
+  --card-bg:rgba(13,20,34,.88);
+  --brand-card-bg1:rgba(255,255,255,.035); --brand-card-bg2:rgba(255,255,255,.015);
+  --chip-hot1:rgba(91,140,255,.25); --chip-hot2:rgba(50,213,255,.14); --chip-hot-border:rgba(91,140,255,.3);
+}
+html[data-theme="light"]{
+  --bg:#f4f6fb; --panel:#ffffff; --panel2:#eef2f8; --text:#1b2433; --text-soft:#3c4a63; --muted:#5a6a82;
+  --line:rgba(15,23,42,.10); --blue:#2f5fd6; --cyan:#0891b2; --green:#16a34a;
+  --shadow:0 20px 55px rgba(15,23,42,.10);
+  --grad-start:#1b2433;
+  --body-radial1:rgba(47,95,214,.09); --body-radial2:rgba(8,145,178,.07);
+  --hero-bg1:rgba(255,255,255,.98); --hero-bg2:rgba(238,242,248,.98); --hero-before:rgba(47,95,214,.16);
+  --card-bg:rgba(255,255,255,.92);
+  --brand-card-bg1:rgba(15,23,42,.025); --brand-card-bg2:rgba(15,23,42,.01);
+  --chip-hot1:rgba(47,95,214,.14); --chip-hot2:rgba(8,145,178,.12); --chip-hot-border:rgba(47,95,214,.3);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:
+radial-gradient(circle at 15% 5%,var(--body-radial1),transparent 30%),
+radial-gradient(circle at 85% 15%,var(--body-radial2),transparent 25%),var(--bg);
+color:var(--text);line-height:1.65;transition:background .3s,color .3s}
+.icon{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px;display:inline-block}
+.card h2 .icon{stroke:var(--cyan);width:16px;height:16px}
+.flag-icon{width:20px;height:14px;border-radius:2px;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.15);margin-right:6px;display:inline-block}
+.lang-btn .flag-icon{width:16px;height:11px;margin-right:5px}
+.theme-toggle{border:1px solid var(--line);background:var(--panel);padding:9px 11px;border-radius:999px;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;transition:.2s}
+.theme-toggle:hover{color:var(--text);border-color:var(--blue)}
+.topbar-right{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+a{color:inherit;text-decoration:none}
+.container{max-width:1180px;margin:auto;padding:28px 20px 70px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:22px}
+.logo{font-family:"Space Grotesk",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:18px;letter-spacing:.5px}
+.logo span{color:var(--cyan)}
+.nav{display:flex;gap:8px;flex-wrap:wrap}
+.nav-btn,.icon-btn{border:1px solid var(--line);background:rgba(15,23,42,.02);padding:9px 13px;border-radius:999px;color:var(--muted);font-size:13px;transition:.25s;cursor:pointer;font-family:Inter,sans-serif}
+.nav-btn:hover,.icon-btn:hover{color:var(--text);border-color:rgba(47,95,214,.5);transform:translateY(-2px)}
+.lang-switch{display:flex;gap:6px;flex-wrap:wrap}
+.lang-btn{border:1px solid var(--line);background:var(--panel);padding:7px 11px;border-radius:999px;color:var(--muted);font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.2s;font-family:Inter,sans-serif}
+.lang-btn:hover{color:var(--text);border-color:rgba(47,95,214,.5);transform:translateY(-2px)}
+.lang-btn.active{background:linear-gradient(135deg,rgba(47,95,214,.14),rgba(8,145,178,.1));border-color:var(--blue);color:var(--text);font-weight:600}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--hero-bg1),var(--hero-bg2));border:1px solid var(--line);border-radius:28px;padding:58px 55px;box-shadow:var(--shadow)}
+.hero:before{content:"";position:absolute;width:430px;height:430px;border-radius:50%;right:-130px;top:-250px;background:radial-gradient(circle,var(--hero-before),transparent 65%);pointer-events:none}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--text-soft);font-size:13px;margin-bottom:16px}
+.status{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
+h1{font-family:"Space Grotesk",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:52px;font-size:clamp(44px,7vw,82px);line-height:.98;letter-spacing:-3px;max-width:850px}
+.gradient{background:linear-gradient(90deg,var(--grad-start),var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:22px;font-size:clamp(19px,2.5vw,28px);color:var(--text-soft);margin:20px 0 18px}
+.hero-copy{max-width:760px;color:var(--muted);font-size:16px}
+.contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.contact a,.contact span{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);background:var(--panel2);padding:10px 14px;border-radius:12px;color:var(--text-soft);font-size:13px}
+.contact a:hover{border-color:var(--blue);color:var(--blue)}
+.grid{display:grid;grid-template-columns:1.55fr .85fr;gap:22px;margin-top:22px}
+.card{background:var(--card-bg);border:1px solid var(--line);border-radius:22px;padding:30px}
+.card h2{font-family:"Space Grotesk",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:19px;display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.card h2 i{color:var(--cyan);font-size:16px}
+.timeline{position:relative;margin-left:7px;padding-left:27px;border-left:1px solid rgba(91,140,255,.25)}
+.item{position:relative;padding-bottom:29px}
+.item:last-child{padding-bottom:0}
+.dot{position:absolute;left:-34px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--blue);box-shadow:0 0 16px rgba(91,140,255,.45)}
+.item h3{font-size:16px}.company{color:var(--cyan);font-weight:600;font-size:14px;margin:3px 0}.date{color:#71829b;font-size:12px}
+.details{color:var(--muted);font-size:13px;margin-top:9px}
+.details li{margin:6px 0 0 16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12px;padding:7px 10px;border-radius:9px;background:var(--panel2);border:1px solid var(--line);color:var(--text-soft);transition:.2s}
+.tag:hover{transform:translateY(-2px);border-color:var(--blue);color:var(--blue)}
+.tag.hot{background:linear-gradient(135deg,var(--chip-hot1),var(--chip-hot2));border-color:var(--chip-hot-border);color:var(--text)}
+.edu{display:grid;gap:12px}
+.edu-item{padding:15px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}
+.edu-item strong{display:flex;align-items:center;gap:8px;font-size:13px}.edu-item strong .flag-icon{flex-shrink:0;width:20px;height:14px}.edu-item span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.lang{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:11px 0;font-size:13px}
+.lang:last-child{border-bottom:0}.level{color:var(--muted)}
+.lang b{display:flex;align-items:center;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.stat{padding:15px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}
+.stat b{font-family:"Space Grotesk",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:23px;display:block}.stat span{color:var(--muted);font-size:11px}
+.repo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.repo{border:1px solid var(--line);border-radius:15px;padding:17px;background:var(--panel2);transition:.25s}
+.repo:hover{transform:translateY(-3px);border-color:rgba(8,145,178,.4)}
+.repo h3{font-size:14px;margin-bottom:5px}.repo p{font-size:12px;color:var(--muted);min-height:40px}
+.repo-meta{display:flex;gap:10px;color:var(--muted);font-size:11px;margin-top:10px}
+.repo-lang{color:var(--cyan)}
+.note{font-size:12px;color:var(--muted);margin-top:12px}
+
+.brand-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.brand-card{display:flex;align-items:center;gap:13px;border:1px solid var(--line);border-radius:15px;padding:14px;background:linear-gradient(135deg,var(--brand-card-bg1),var(--brand-card-bg2));transition:.25s}
+.brand-card:hover{transform:translateY(-3px);border-color:rgba(8,145,178,.38);box-shadow:0 12px 30px rgba(15,23,42,.1)}
+.brand-card strong{display:block;font-size:13px}.brand-card span{display:block;color:var(--muted);font-size:11px;line-height:1.45;margin-top:2px}
+.brand-logo{width:44px;height:44px;min-width:44px;border-radius:12px;display:grid;place-items:center;font-family:"Space Grotesk",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:800;font-size:13px;border:1px solid var(--line);background:#1b2740;color:#fff}
+.brand-logo.bmw{border-radius:50%;font-size:11px}.brand-logo.duravit{font-size:25px}.brand-logo.intesa{font-size:10px}.brand-logo.ferrari{font-size:25px}
+.brand-logo.opencity{background:linear-gradient(135deg,#2b4066,#2f5f8c)}.brand-logo.binetwork{background:linear-gradient(135deg,#1a3c5e,#1c7a9c)}
+.brand-logo.unitrento{font-size:9px}.brand-logo.valladolid{font-size:10px}.brand-logo.aast{font-size:10px}.brand-logo.epsilon{font-size:27px}
+.skill-groups{display:grid;gap:20px}.skill-groups small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.5px;margin-bottom:8px}
+.course-list{display:flex;flex-wrap:wrap;gap:8px}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:22px;color:var(--muted);font-size:12px}
+.actions{display:flex;gap:9px}
+.action{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:11px;padding:10px 13px;display:inline-flex;align-items:center;gap:7px}
+.action:hover{border-color:var(--blue);color:var(--blue)}
+.reveal{opacity:0;transform:translateY(16px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.hero{padding:38px 26px}.repo-grid{grid-template-columns:1fr}.topbar{flex-wrap:wrap}.nav{width:100%;order:3;justify-content:flex-start}}
+@media(max-width:560px){.brand-grid{grid-template-columns:1fr}.container{padding:14px 12px 45px}.hero{border-radius:20px;padding:30px 21px}h1{letter-spacing:-2px}.card{padding:22px}.contact a,.contact span{width:100%}.stats{grid-template-columns:1fr}.footer{flex-direction:column;align-items:flex-start}.nav-btn{padding:7px 10px;font-size:12px}}
+@media print{body{background:white;color:#111}.topbar,.actions,.note{display:none}.hero,.card{box-shadow:none;background:white;color:#111;border-color:#ddd}.hero-copy,.details,.level,.date{color:#555}.gradient{color:#111;background:none}.container{max-width:none}.grid{grid-template-columns:1.5fr 1fr}}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <div class="topbar">
+    <div class="logo">ANDREW<span>.</span>ISKROS</div>
+    <nav class="nav">
+      <button type="button" class="nav-btn" data-target="experience">Experience</button><button type="button" class="nav-btn" data-target="projects">Projects</button><button type="button" class="nav-btn" data-target="education">Education</button><button type="button" class="nav-btn" data-target="skills">Skills</button>
+    </nav>
+    <div class="topbar-right">
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
+        <button type="button" class="lang-btn" data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button type="button" class="lang-btn" data-lang="de" onclick="setLanguage('de')">DE</button>
+      </div>
+      <button type="button" class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle light/dark theme">
+        <svg class="icon" id="theme-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="hero reveal">
+    <div class="eyebrow"><span class="status"></span> <span>Based in Trento, Italy · Business × Technology × AI</span></div>
+    <h1>Andrew <span class="gradient">Iskros</span></h1>
+    <div class="role">Business Analyst · Technical Account Manager · Digital Marketing Specialist</div>
+    <p class="hero-copy">
+      Business Analyst and digital marketing specialist with an international background in International Management and Business Information Systems. I connect business needs with technology, combining analytical thinking, digital strategy and hands-on software platform experience across private and public-sector environments.
+    </p>
+    <div class="contact">
+      <a id="email-link" href="mailto:iskrosandrew@gmail.com" title="Click to send an email">✉ iskrosandrew@gmail.com</a>
+      <a id="phone-link" href="tel:+393896631688" title="Click to call">📞 +39 389 663 1688</a>
+      <span>📍 Trento, Italy</span>
+      <a href="https://github.com/iskrosandrew-ai" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/andrew-iskros-355352b0/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <div class="grid">
+    <main>
+      <section class="card reveal" id="experience">
+        <h2>💼 Experience</h2>
+        <div class="timeline">
+          <article class="item"><span class="dot"></span>
+            <h3>Technical Account Manager</h3><div class="company">OpenCity Italia · Trento, Italy</div><div class="date">Nov. 2025 — Present</div>
+            <ul class="details"><li>Support public-sector entities in achieving optimal use of digital services.</li><li>Configure and monitor the software platform for public entities.</li><li>Conduct follow-ups, prepare reports and provide first-level support.</li></ul>
+          </article>
+          <article class="item"><span class="dot"></span>
+            <h3>B2B Digital Marketing Specialist</h3><div class="company">Bi Network · Arco, Italy</div><div class="date">Nov. 2024 — Nov. 2025</div>
+            <ul class="details"><li>Managed B2B digital marketing for Qlik Sense, SaaS solutions and analytics software.</li><li>Developed campaigns and content to promote data analytics and business intelligence platforms.</li><li>Supported client acquisition and product positioning in the enterprise analytics market.</li></ul>
+          </article>
+          <article class="item"><span class="dot"></span>
+            <h3>Marketing Project Manager</h3><div class="company">ZMove · Rovereto, Italy</div><div class="date">Oct. 2023 — Feb. 2024</div>
+            <ul class="details"><li>Defined marketing strategy and brand positioning for green solutions and innovation products.</li><li>Developed go-to-market plans focused on sustainability and technological innovation.</li><li>Coordinated campaigns and content to strengthen market presence in the green-tech sector.</li></ul>
+          </article>
+          <article class="item"><span class="dot"></span>
+            <h3>Communication Specialist</h3><div class="company">Anasia Group · Cairo, Egypt / Dubai, UAE</div><div class="date">Sep. 2021 — Sep. 2022</div>
+            <ul class="details"><li>Managed and coordinated marketing projects in line with business objectives, timelines and budgets.</li><li>Led cross-functional teams with a focus on collaboration, performance and results.</li><li>Supervised brand consistency, ensuring quality and uniformity across all channels and materials.</li></ul>
+          </article>
+          <article class="item"><span class="dot"></span>
+            <h3>Head of Office</h3><div class="company">Egyptian Armed Forces · Egypt</div><div class="date">May 2020 — Jun. 2021</div>
+            <ul class="details"><li>Organization of meetings and management of databases.</li><li>Preparation of letters, presentations and reports.</li><li>Supervision and monitoring of administrative staff.</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="card reveal" style="margin-top:22px">
+        <h2>🌍 International Experience</h2>
+        <div class="brand-grid">
+          <div class="brand-card"><div class="brand-logo bmw">BMW</div><div><strong>BMW</strong><span>Germany · International Business Management · Jul. 2017</span></div></div>
+          <div class="brand-card"><div class="brand-logo duravit">D</div><div><strong>DURAVIT</strong><span>Egypt · Supply Chain · Jun. 2017</span></div></div>
+          <div class="brand-card"><div class="brand-logo intesa">ISP</div><div><strong>Intesa Sanpaolo</strong><span>Egypt · Credit & Loans · Aug. 2018</span></div></div>
+          <div class="brand-card"><div class="brand-logo ferrari">F</div><div><strong>Ferrari</strong><span>Italy · Marketing & Branding · Jul. 2019</span></div></div>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <section class="card reveal" id="skills">
+        <h2>⚡ Skills</h2>
+        <div class="skill-groups">
+          <div><small>BUSINESS & STRATEGY</small><div class="tags">
+            <span class="tag hot">Business Analysis</span><span class="tag hot">Project Management</span><span class="tag hot">Digital Marketing</span>
+            <span class="tag">Marketing Strategy</span><span class="tag">B2B Marketing</span><span class="tag">Client Success</span>
+          </div></div>
+          <div><small>DATA & TECHNOLOGY</small><div class="tags">
+            <span class="tag hot">Data Science</span><span class="tag hot">Machine Learning</span><span class="tag hot">AI</span>
+            <span class="tag">Data Analytics</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Qlik</span><span class="tag">Power BI</span>
+          </div></div>
+        </div>
+      </section>
+
+      <section class="card reveal" id="education" style="margin-top:22px">
+        <h2>🎓 Education</h2>
+        <div class="edu">
+          <div class="edu-item"><strong>Diploma in Data Science & Machine Learning</strong><span>EPSILON Global, United States · 2026–2027</span></div>
+          <div class="edu-item"><strong>MSc in International Management · 103/110</strong><span>University of Trento, Italy · 2022–2025</span></div>
+          <div class="edu-item"><strong>BSc in Business Information Systems · GPA 3.96/4.0</strong><span>Arab Academy for Science, Technology & Maritime Science · 2015–2020</span></div>
+          <div class="edu-item"><strong>Bachelor in International Management · Erasmus+</strong><span>Universidad de Valladolid, Spain · 2018–2019</span></div>
+        </div>
+      </section>
+
+      <section class="card reveal" style="margin-top:22px">
+        <h2>🗣️ Languages</h2>
+        <div class="lang"><b>English</b><span class="level">C2 (Proficient)</span></div>
+        <div class="lang"><b>Italian</b><span class="level">C1 (Advanced)</span></div>
+        <div class="lang"><b>Arabic</b><span class="level">C2 (Native)</span></div>
+        <div class="lang"><b>Spanish</b><span class="level">B1 (Intermediate)</span></div>
+        <div class="lang"><b>German</b><span class="level">A1 (Basic)</span></div>
+      </section>
+    </aside>
+  </div>
+</div>
+</body>
+</html>
