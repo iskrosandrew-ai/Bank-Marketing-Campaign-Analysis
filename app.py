@@ -1,12 +1,20 @@
 import streamlit as st
 
-# Main Application Entrypoint with Multi-Page Navigation
-home_page = st.Page("pages/1_Home.py", title="Home & Data Overview", icon="🏠", default=True)
-kpis_page = st.Page("pages/2_Base_KPIs.py", title="Base KPIs & Analytics", icon="📈")
-assistant_page = st.Page("pages/3_AI_Assistant.py", title="AI Marketing Assistant", icon="🤖")
+st.set_page_config(
+    page_title="Bank Marketing Intelligence Hub",
+    page_icon="🏦",
+    layout="wide"
+)
 
-pg = st.navigation({
-    "Navigation": [home_page, kpis_page, assistant_page]
-})
+st.title("🏦 Bank Marketing Campaign Intelligence Hub")
+st.markdown("""
+Welcome to the **Bank Marketing Campaign Analysis** dashboard.
 
-pg.run()
+Use the sidebar on the left to navigate between the pages:
+
+- **Home** → Data overview & cleaning audit  
+- **Base KPIs** → Interactive filters and performance metrics  
+- **AI Assistant** → Bilingual AI chat (English + Egyptian Arabic)
+""")
+
+st.info("👈 Select a page from the sidebar to get started.")
